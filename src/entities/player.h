@@ -8,6 +8,6 @@ public:
     Vector2 position;
     Vector2 scale;
 
-    void Init();
+    void Load();
     void Draw();
 };

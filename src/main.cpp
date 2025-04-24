@@ -1,25 +1,23 @@
-#include <iostream>
 #include "raylib.h"
 
-
-#include "entities/player.h"
-
-Player player;
+#include "scene_manager.h"
 
 int main () {
-    InitWindow(800, 600, "raylib [core] example - basic window");
+    InitWindow(800, 600, "Raylib Template By CuteeCactus");
     SetTargetFPS(60);
 
-    player.Init();
+    SceneManager::Load();
+    
     while (!WindowShouldClose()) {
         BeginDrawing();
-
-        ClearBackground(BLACK);
-        player.Draw();
+        
+        SceneManager::Update();
+        SceneManager::Draw();
         
         EndDrawing();
     }
-
+    
+    SceneManager::Unload();
     CloseWindow();
     return 0;
 }

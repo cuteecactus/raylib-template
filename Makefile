@@ -8,6 +8,7 @@ LDFLAGS := -Llib -lraylib -lopengl32 -lgdi32 -lwinmm
 SRC_DIR := src
 SRCS := $(wildcard $(SRC_DIR)/*.cpp) \
         $(wildcard $(SRC_DIR)/entities/*.cpp) \
+        $(wildcard $(SRC_DIR)/scenes/*.cpp) \
         # $(wildcard $(SRC_DIR)/entities/enemies/*.cpp) \
         # $(wildcard $(SRC_DIR)/scenes/*.cpp)
 

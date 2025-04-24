@@ -1,18 +1,34 @@
 #include "player.h"
 #include "raylib.h"
 
-void Player::Init()
-{
-    float screenCenterX = GetScreenWidth() / 2.0f;
-    float screenCenterY = GetScreenHeight() / 2.0f;
+float screenCenterX = GetScreenWidth() / 2.0f;
+float screenCenterY = GetScreenHeight() / 2.0f;
 
-    scale = {50, 50};
+void Player::Load() {
+    
+    scale = {50.0f, 50.0f};  
+    
+  
     position = {
-        screenCenterX - (scale.x / 2),
-        screenCenterY - (scale.y / 2)};
+        (GetScreenWidth()/2.0f) - (scale.x/2.0f),
+        (GetScreenHeight()/2.0f) - (scale.y/2.0f)
+    };
 }
 
-void Player::Draw()
-{
-    DrawRectangleV(position, scale, RED); // More efficient version
+void Player::Draw() {
+    // Draw player rectangle
+    // DrawRectangleV(position, scale, RED);
+    // DrawRectangleV({screenCenterX,screenCenterY}, scale, RED);
+    DrawRectangle ((GetScreenWidth()/2.0f) - scale.x/2.0f, (GetScreenHeight()/2.0f) - scale.y/2.0f, scale.x, scale.y, RED);
+    
+    
+    DrawText(TextFormat("Pos: (%.1f, %.1f)", position.x, position.y), 10, 10, 20, WHITE);
+    DrawText(TextFormat("Scale: (%.1f, %.1f)", scale.x, scale.y), 10, 40, 20, WHITE);
+    
+    
+    Vector2 center = {
+        GetScreenWidth()/2.0f,
+        GetScreenHeight()/2.0f
+    };
+    DrawCircleV(center, 5.0f, GREEN);
 }

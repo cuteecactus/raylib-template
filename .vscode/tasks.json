@@ -3,7 +3,7 @@
     "tasks": [
       {
         "label": "Build and Run",
-        "type": "process",  // Use "process" instead of "shell"
+        "type": "process",  
         "command": "cmd.exe",
         "args": ["/c", "build_and_run.bat"],
         "group": {
