@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build and Run",
+        "type": "process",  // Use "process" instead of "shell"
+        "command": "cmd.exe",
+        "args": ["/c", "build_and_run.bat"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
